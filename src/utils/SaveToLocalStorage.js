@@ -24,5 +24,14 @@ function getFromLocalStorage(key) {
 function removeAllSelected(key){
     localStorage.removeItem(key)
 }
-
-export { saveToLocalStorage , getFromLocalStorage , removeAllSelected }; 
+function createCustomArray(array){
+        let list = []
+        for (let i of array) {
+            let data = {}
+            data.name = i.book_name
+            data.page = i.number_of_pages
+            list.push(data)
+        }
+        return list
+}
+export { saveToLocalStorage , getFromLocalStorage , removeAllSelected , createCustomArray , }; 

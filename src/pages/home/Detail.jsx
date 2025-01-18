@@ -1,7 +1,7 @@
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useNavigate, useParams } from "react-router";
 import { saveToLocalStorage } from "../../utils/SaveToLocalStorage";
 import { ToastContainer, toast } from 'react-toastify';
-
+import { TiArrowBack } from "react-icons/ti";
 
 const Detail = () => {
 
@@ -13,7 +13,7 @@ const Detail = () => {
     let { book_name, author_name, book_type, review, tags, image_url, number_of_pages
         , publish_year, rating } = book;
     // console.log(book)
-
+let nevigate = useNavigate()
     const notify1 = () => toast('Already added to the list !');
     const notify2 = () => toast('Added to the list !');
 
@@ -63,6 +63,7 @@ const Detail = () => {
                 <div className="flex gap-3 mt-5">
                     <button onClick={() => handleClick('toRead', book.id)} className="btn bg-transparent px-6 border border-slate-400">Read</button>
                     <button onClick={() => handleClick('wishList', book.id)} className="btn bg-[#50B1C9] px-6">Wishlist</button>
+                    <button onClick={()=> nevigate(-1)} className="btn "><TiArrowBack className="text-xl" /> Go Back</button>
                     <ToastContainer />
                 </div>
             </div>
