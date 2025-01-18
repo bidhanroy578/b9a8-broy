@@ -1,0 +1,12 @@
+.bgfnt {
+    color: #23BE0A;
+    background-color: #F4FCF3;
+    padding: 2px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
