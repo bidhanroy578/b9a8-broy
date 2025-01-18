@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router";
 import List from "./List";
 import { FaAngleDown } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-import { getFromLocalStorage } from "./../../utils/SaveToLocalStorage";
+import { getFromLocalStorage, removeAllSelected } from "./../../utils/SaveToLocalStorage";
 // import { TfiControlSkipForward } from "react-icons/tfi";
 
 
@@ -17,7 +17,8 @@ import { getFromLocalStorage } from "./../../utils/SaveToLocalStorage";
 
 
 const Listed = () => {
-
+let [removeAllSelectedBtn , setRemoveAllSelectedBtn] = useState(true)
+// let [clicked , setClicked] = useState(true)
     let books = useLoaderData();
     let [show, setShow] = useState(false);
     let [active, setActive] = useState(true);
@@ -31,7 +32,7 @@ const Listed = () => {
 useEffect( ()=> {
     let tmpBookList = books.filter(book => bookId.includes(book.id))
     setBookList(tmpBookList)
-}, [bookId , books ])
+}, [bookId , books  ])
     
     // setBookList( books.filter( book => bookId.includes(book.id) ) )
 // console.log(bookList)
@@ -62,12 +63,18 @@ useEffect( ()=> {
 
             </div>
 
+                        {/* remove all btn  */}
+            <div>
+                <button onClick={()=>{removeAllSelected('toRead') ; onclickBtn('toRead') }} className={`btn ${removeAllSelectedBtn ? "" : "hidden"}  btn-error text-white my-5`}>Remove all selected Read Book list</button>
+                <button onClick={()=>{removeAllSelected('wishList') ; onclickBtn('wishList') }} className={`btn ${removeAllSelectedBtn ? "hidden" : ""}  btn-error text-white my-5`}>Remove all selected Wishlist Book list</button>
+            </div>
+
             {/* 'read  books' and 'wishlist books' button  */}
 
             <div>
                 <div className="flex w-full">
-                    <button onClick={() => { setActive(true); onclickBtn('toRead') }} className={`min-w-fit p-3 duration-150 ${active ? "rounded-lg rounded-b-none border-2 border-b-0" : "border-b-2 text-slate-500"}`}>Read Books</button>
-                    <button onClick={() => { setActive(false); onclickBtn('wishList') }} className={`min-w-fit p-3 duration-150 ${active ? "border-b-2 text-slate-500" : "rounded-lg rounded-b-none border-2 border-b-0"}`}>Wishlist Books</button>
+                    <button onClick={() => { setActive(true); onclickBtn('toRead'); setRemoveAllSelectedBtn(true) }} className={`min-w-fit p-3 duration-150 ${active ? "rounded-lg rounded-b-none border-2 border-b-0" : "border-b-2 text-slate-500"}`}>Read Books</button>
+                    <button onClick={() => { setActive(false); onclickBtn('wishList'); setRemoveAllSelectedBtn(false) }} className={`min-w-fit p-3 duration-150 ${active ? "border-b-2 text-slate-500" : "rounded-lg rounded-b-none border-2 border-b-0"}`}>Wishlist Books</button>
                     <p className="w-full border-b-2 "></p>
                 </div>
 

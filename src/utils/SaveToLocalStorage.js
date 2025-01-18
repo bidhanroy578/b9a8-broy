@@ -21,5 +21,8 @@ function saveToLocalStorage(key, value) {
 function getFromLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));
 }
+function removeAllSelected(key){
+    localStorage.removeItem(key)
+}
 
-export { saveToLocalStorage, getFromLocalStorage }; 
+export { saveToLocalStorage , getFromLocalStorage , removeAllSelected }; 
