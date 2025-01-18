@@ -1,10 +1,11 @@
 import { NavLink, Outlet } from "react-router";
+import "./Nav.css"
 
 const Nav = () => {
     let linklist = <>
-                    <NavLink className={'btn font-semibold text-lg hover:bg-green-200 bg-transparent border-none ouline-none'} to={'/'}>Home</NavLink>
-                    <NavLink className={'btn font-semibold text-lg hover:bg-green-200 bg-transparent border-none ouline-none'} to={'/listed-books'}>Listed Books</NavLink>
-                    <NavLink className={'btn font-semibold text-lg hover:bg-green-200 bg-transparent border-none ouline-none'} to={'/pages-to-read'}>Pages to Read</NavLink>
+                    <NavLink className={'btn font-semibold text-lg shadow-none hover:bg-green-200 bg-transparent border-none ouline-none'} to={'/'}>Home</NavLink>
+                    <NavLink className={'btn font-semibold text-lg shadow-none hover:bg-green-200 bg-transparent border-none ouline-none'} to={'/listed-books'}>Listed Books</NavLink>
+                    <NavLink className={'btn font-semibold text-lg shadow-none hover:bg-green-200 bg-transparent border-none ouline-none'} to={'/pages-to-read'}>Pages to Read</NavLink>
     </>
     return (
         <div className="my-10">
