@@ -1,55 +1,21 @@
-import { Link, NavLink, Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 
 const Nav = () => {
     let linklist = <>
-        <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/listed-books'}>Listed Books</NavLink></li>
-        <li><NavLink to={'/pages-to-read'}>Pages to Read</NavLink></li>
-        
-        
+                    <NavLink className={'btn font-semibold text-lg hover:bg-green-200 bg-transparent border-none ouline-none'} to={'/'}>Home</NavLink>
+                    <NavLink className={'btn font-semibold text-lg hover:bg-green-200 bg-transparent border-none ouline-none'} to={'/listed-books'}>Listed Books</NavLink>
+                    <NavLink className={'btn font-semibold text-lg hover:bg-green-200 bg-transparent border-none ouline-none'} to={'/pages-to-read'}>Pages to Read</NavLink>
     </>
     return (
-        <div>
-            this is the nav .
-
-            <div className="nav">
-                <div className="navbar bg-base-100">
-                    <div className="navbar-start">
-                        <div className="dropdown">
-                            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h8m-8 6h16" />
-                                </svg>
-                            </div>
-                            <ul
-                                tabIndex={0}
-                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                                {linklist}
-                            </ul>
-                        </div>
-                        <a className="btn btn-ghost text-xl">Book Vibe</a>
-                    </div>
-                    <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1">
-                            {linklist}
-                        </ul>
-                    </div>
-                    <div className="navbar-end gap-5">
-                        <button><Link to={''}>Sign In</Link></button>
-                        <button><Link to={''}>Sign Up</Link></button>
-                    </div>
-                </div>
+        <div className="my-10">
+            <div className="grid grid-cols-3 ">
+                <div className="font-bold text-[28px] btn border-none justify-start bg-transparent shadow-none hover:bg-transparent hover:">Book Vibe</div>
+                <div className="flex gap-2"> {linklist} </div>
+                <div className="text-end">
+                    <button className="btn mx-2 px-7 text-lg bg-[#23BE0A] text-white">Sign In</button>
+                    <button className="btn mx-2 px-7 text-lg bg-[#59C6D2] text-white">Sign Up</button></div>
             </div>
-            <Outlet />
+            <Outlet></Outlet>
         </div>
     );
 };

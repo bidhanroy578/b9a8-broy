@@ -1,11 +1,23 @@
-.bgfnt {
+/* .bgfnt {
     color: #23BE0A;
     background-color: #F4FCF3;
     padding: 2px 15px;
     border-radius: 20px;
     font-weight: 500;
-}
+} */
 
+/* .btn-green {
+    background-color: #23BE0A;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+} */
+
+/* .active {
+
+    color: green;
+background: white ;
+} */
 
 @tailwind base;
 @tailwind components;

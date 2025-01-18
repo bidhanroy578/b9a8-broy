@@ -77,7 +77,7 @@ const Books = () => {
       ]
       
     return (
-        <div className="">
+        <div className="mb-10">
             <h4 className="font-bold text-[40px] text-center">Books</h4>
             <div className="grid grid-cols-3 gap-5">
                 {
