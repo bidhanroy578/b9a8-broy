@@ -14,13 +14,13 @@ const Nav = () => {
         <div className="my-10">
             <div className="flex justify-between items-center lg:grid grid-cols-3 ">
                 <div className="font-bold text-[28px] btn border-none justify-start bg-transparent shadow-none hover:bg-transparent hover:">Book Vibe</div>
-                <div className=" hidden lg:flex gap-2"> {linklist} </div>
+                <div className=" hidden lg:flex xl:gap-2"> {linklist} </div>
                 <div className="text-end hidden lg:inline-block">
                     <button className="btn mx-2 px-7 text-lg bg-[#23BE0A] hover:bg-green-400 text-white">Sign In</button>
                     <button className="btn mx-2 px-7 text-lg hover:bg-[#59c6d2a6] bg-[#59C6D2] text-white">Sign Up</button>
                 </div>
                 {/* this is for mobile view  */}
-                <div onClick={()=> setCl(!cl)} className="md:hidden">
+                <div onClick={()=> setCl(!cl)} className="lg:hidden">
                    <div className="btn bg-transparent shadow-none hover:bg-green-200"><CiMenuKebab /></div>
                 </div>
             </div>
