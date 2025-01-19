@@ -12,7 +12,7 @@ const PagesToRead = () => {
 
     return (
         <div>
-            <div className='flex items-center justify-center bg-[#F8F8F8] p-5 rounded-3xl'>
+            <div className='flex items-center justify-center bg-[#F8F8F8] lg:p-5 rounded-3xl'>
                 <div className='overflow-x-auto mx-auto'>
                     {
                         data.length > 0 ? 

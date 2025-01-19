@@ -1,8 +1,9 @@
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid , Tooltip } from 'recharts';
 import PropTypes from 'prop-types';
 
 
 const Chart = ({data}) => {
+    // let 
  console.log(data )
     const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
     // const data = [
@@ -63,30 +64,43 @@ const Chart = ({data}) => {
 
         return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
     };
-
-
+// let w = window.innerWidth ;
+// console.log(w)
+let windowSize = () => {
+    if(window.innerWidth >= 1440){
+        return 1300
+    }
+    if ( window.innerWidth >= 1024 && window.innerWidth <1440 ){
+        return window.innerWidth - 130
+    }
+    if(window.innerWidth < 1024 ){
+        return window.innerWidth - 10
+    }
+}
+let w = windowSize()
     return (
         <BarChart
-            width={1170}
+            width={w}
             height={500}
             data={data}
-            margin={
-                {
-                    top: 20,
-                    right: 10,
-                    left: 10,
-                    bottom: 10,
-                }
-            }
+            // margin={
+            //     {
+            //         top: 20,
+            //         right: 2,
+            //         left: 2,
+            //         bottom: 30,
+            //     }
+            // }
         >
             <CartesianGrid strokeDasharray="2 3" />
             <XAxis dataKey="name" />
-            <YAxis />
+            <YAxis dataKey='page'/>
             <Bar dataKey="page" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
                 {data.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={colors[index % 6]} />
                 ))}
             </Bar>
+                <Tooltip />
         </BarChart>
     );
 };
