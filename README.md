@@ -1,7 +1,5 @@
 # Assignment 8 of batch 9
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
 live link of this project ...
 - [b9a8.broy.surge.sh](http://b9a8.broy.surge.sh)
 
