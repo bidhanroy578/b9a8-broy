@@ -2,7 +2,12 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+live link of this project ...
+- [b9a8.broy.surge.sh](http://b9a8.broy.surge.sh)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features of this project are ...
+
+    1. Responsive
+    2. Has sorting feature
+    3. Dynamic Graph
+    4. Responsive Graph for various screen size
