@@ -4,23 +4,17 @@ import { ToastContainer, toast } from 'react-toastify';
 import { TiArrowBack } from "react-icons/ti";
 
 const Detail = () => {
-
-    
-
     let { id } = useParams();
     let books = useLoaderData();
     let book = books.find((book) => book.id == id);
-    let { book_name, author_name, book_type, review, tags, image_url, number_of_pages
-        , publish_year, rating } = book;
-    // console.log(book)
-let nevigate = useNavigate()
+    let { book_name, author_name, book_type, review, tags, image_url, number_of_pages, publish_year, rating } = book;
+
+    let nevigate = useNavigate()
     const notify1 = () => toast('Already added to the list !');
     const notify2 = () => toast('Added to the list !');
 
     let handleClick = (localStorageKey, bookId) => {
-        console.log(localStorageKey, bookId)
         let status = saveToLocalStorage(localStorageKey, bookId)
-        console.log(status)
         status ? notify1() : notify2()
     }
 
@@ -29,7 +23,6 @@ let nevigate = useNavigate()
             <div className="md:w-1/2 bg-[#F3F3F3] content-center rounded-xl">
                 <img src={image_url} alt="" className="m-auto" />
             </div>
-
 
             <div className="md:w-1/2 p-4 md:p-10">
                 <h1 className="font-bold text-[40px] text-[#131313cc]">{book_name}</h1>
@@ -63,7 +56,7 @@ let nevigate = useNavigate()
                 <div className="flex gap-3 mt-5">
                     <button onClick={() => handleClick('toRead', book.id)} className="btn bg-transparent px-6 border border-slate-400">Read</button>
                     <button onClick={() => handleClick('wishList', book.id)} className="btn bg-[#50B1C9] px-6">Wishlist</button>
-                    <button onClick={()=> nevigate(-1)} className="btn hidden md:flex"><TiArrowBack className="text-xl" /> Go Back</button>
+                    <button onClick={() => nevigate(-1)} className="btn hidden md:flex"><TiArrowBack className="text-xl" /> Go Back</button>
                     <ToastContainer />
                 </div>
             </div>

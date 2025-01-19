@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+import { Link } from "react-router";
 import { LuCalendarDays } from "react-icons/lu";
 import { GrBook } from "react-icons/gr";
 
@@ -30,10 +32,6 @@ const List = ({ book }) => {
 };
 
 export default List;
-
-import PropTypes from 'prop-types';
-import { Link } from "react-router";
-
 List.propTypes = {
     book: PropTypes.object
 };

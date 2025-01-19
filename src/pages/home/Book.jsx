@@ -2,10 +2,8 @@ import PropTypes from 'prop-types';
 import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router";
 
-
 const Book = ({ book }) => {
     let { book_name, author_name, tags, book_type, image_url, id, rating } = book;
-    // console.log(book);
     return (
         <div className="border border-slate-300 p-5 rounded-xl">
             <div className="flex flex-col gap-2 lg:gap-5">
@@ -30,8 +28,6 @@ const Book = ({ book }) => {
 };
 
 export default Book;
-
-
 Book.propTypes = {
     book: PropTypes.object,
 

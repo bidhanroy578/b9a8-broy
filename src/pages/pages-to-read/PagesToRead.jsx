@@ -5,9 +5,7 @@ import Chart from './Chart';
 const PagesToRead = () => {
     let books = useLoaderData()
     let ids = getFromLocalStorage('toRead') || []
-    // console.log(ids, books)
     let bookList = books.filter(book => ids.includes(book.id))
-    // console.log(bookList)
     let data = createCustomArray(bookList)
 
     return (

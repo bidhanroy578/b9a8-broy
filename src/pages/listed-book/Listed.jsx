@@ -3,22 +3,9 @@ import List from "./List";
 import { FaAngleDown } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { getFromLocalStorage, removeAllSelected } from "./../../utils/SaveToLocalStorage";
-// import { TfiControlSkipForward } from "react-icons/tfi";
-
-
-// function saveToLocalStorage(key, value) {
-//     localStorage.setItem(key , JSON.stringify(value));
-//   }
-
-//   function getFromLocalStorage(key) {
-//     return JSON.parse(localStorage.getItem(key));
-//   }
-
-
 
 const Listed = () => {
     let [removeAllSelectedBtn, setRemoveAllSelectedBtn] = useState(true)
-    // let [clicked , setClicked] = useState(true)
     let books = useLoaderData();
     let [show, setShow] = useState(false);
     let [active, setActive] = useState(true);
@@ -27,21 +14,15 @@ const Listed = () => {
     let onclickBtn = (localStorageKey) => {
         let list = getFromLocalStorage(localStorageKey)
         list ? setBookId(list) : setBookId([])
-
     }
     useEffect(() => {
         let tmpBookList = books.filter(book => bookId.includes(book.id))
         setBookList(tmpBookList)
     }, [bookId, books])
 
-    // setBookList( books.filter( book => bookId.includes(book.id) ) )
-    // console.log(bookList)
     let handleSort = (key) => {
         let sorted = bookList.toSorted(function (a, b) { console.log(b[key] - a[key]); return b[key] - a[key] })
         setBookList(sorted)
-        // bookList = sorted 
-        // console.log(sorted)
-        // console.log(bookList)
     }
 
     return (
@@ -79,9 +60,6 @@ const Listed = () => {
                     <button onClick={() => { setActive(false); onclickBtn('wishList'); setRemoveAllSelectedBtn(false) }} className={`min-w-fit p-3 duration-150 ${active ? "border-b-2 text-slate-500" : "rounded-lg rounded-b-none border-2 border-b-0"}`}>Wishlist Books</button>
                     <p className="w-full border-b-2 "></p>
                 </div>
-
-
-
 
                 {/* book list  */}
 
