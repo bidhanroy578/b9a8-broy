@@ -26,7 +26,13 @@ const Nav = () => {
             </div>
             <div className={`duration-300 ${cl ? '' : 'hidden'}`}>
                 <div className="h-full w-full bg-white absolute z-10 bg-opacity-70 "></div>
-                <div className="rounded-t-xl absolute z-20 w-full p-5 flex flex-col ">{linklist}</div>
+                <div className="rounded-t-xl absolute z-20 w-full p-5 flex gap-1 flex-col ">
+                    {linklist}
+                    <button className="btn mx-2 px-7 text-lg bg-[#23BE0A] hover:bg-green-400 text-white">Sign In</button>
+                    <button className="btn mx-2 px-7 text-lg hover:bg-[#59c6d2a6] bg-[#59C6D2] text-white">Sign Up</button>
+
+                    </div>
+
             </div>
 
 

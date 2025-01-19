@@ -2,9 +2,9 @@ import { Link } from 'react-router';
 
 const ErrorPage = () => {
     return (
-        <div>
-            this is for error page 
-            <Link to={'/'}>go back to home page</Link> 
+        <div className='font-bold text-3xl text-center'>
+            this is for error page <br />
+            <Link to={'/'}><button className='btn btn-error'>go back to home page</button></Link> 
         </div>
     );
 };
