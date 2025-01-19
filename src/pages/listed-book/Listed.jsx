@@ -21,7 +21,7 @@ const Listed = () => {
     }, [bookId, books])
 
     let handleSort = (key) => {
-        let sorted = bookList.toSorted(function (a, b) { console.log(b[key] - a[key]); return b[key] - a[key] })
+        let sorted = bookList.toSorted(function (a, b) { return b[key] - a[key] })
         setBookList(sorted)
     }
 
